@@ -185,4 +185,4 @@ chmod +x ~/.local/bin/wofi-compose.sh
 
 # Demo
 
-![vid](./Demo.mp4)
+![vid](./Demo.gif)

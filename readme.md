@@ -29,12 +29,21 @@ In the code, the script calls the interface style from `$HOME/.config/wofi/style
 
 Create the directory and CSS file:
 
+**EDITOR=nano**:
+
 ```
 mkdir -p ~/.config/wofi
 nano ~/.config/wofi/style.css
 ```
 
-You can paste the following basic Dark Mode CSS into the [style.css](./theme-config.css) file (you can freely modify the colors and dimensions later):
+**EDITOR=nvim**:
+
+```
+mkdir -p ~/.config/wofi
+nvim ~/.config/wofi/style.css
+```
+
+You can also paste the following basic Dark Mode CSS ([style.css](./theme-config.css)) into the `style.css` file (you can freely modify the colors and dimensions later):
 
 ```CSS
 window {
@@ -75,18 +84,29 @@ window {
 }
 ```
 
-# 5. Custom Wofi 
+# 5. Add custom search tool into Wofi 
 
 To use Ultra Flow-search as a daily tool, save it as a globally executable command in your system:
 
-## Step 1: Create a new script file (e.g., name it wofi-compose):
+## Step 1: Create a new script file (e.g., name it wofi-compose.sh):
 
-```Bash
+**EDITOR=nano**:
+
+```shell
 mkdir -p ~/.local/bin
-nano ~/.local/bin/ultra-search
+nano ~/.local/bin/wofi-compose.sh
 ```
 
-## Step 2: Paste the entire Zsh code you provided into this file and save it.
+**EDITOR=nvim**:
+
+```shell
+mkdir -p ~/.local/bin
+nano ~/.local/bin/wofi-compose.sh
+```
+
+**NOTE**: You also choose anywhere to place `wofi-compose.sh`.
+
+## Step 2: Paste the entire Zsh code you provided into the `wofi-compose.sh` file and save it.
 
 Ref: [link](./wofi-compose.sh)
 
@@ -182,6 +202,8 @@ chmod +x ~/.local/bin/wofi-compose.sh
 # Add to `Keyboard-Shortcut`
 
 ![img](./SetCustomShortcuts.png)
+
+**NOTE**: Based on the location of `wofi-compose.sh`, the `command` must point to its absolute path to execute the script (`wofi-compose.sh`) whenever you press `Alt + Space` (as shown in the setup image below).
 
 # Demo
 
